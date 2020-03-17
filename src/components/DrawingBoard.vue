@@ -57,17 +57,16 @@
             touchStart(event) {
                 this.mouse.down = true;
                 let rect = this.$refs['sign-canvas'].getBoundingClientRect();
-                let x = event.targetTouches[0].clientX - rect.left;
-                let y = event.targetTouches[0].pageY - rect.top;
+                let x = event.touches[0].clientX - rect.left;
+                let y = event.touches[0].clientY - rect.top;
 
                 this.ctx.beginPath();
                 this.ctx.moveTo(x, y);
             },
             touchMove(event) {
                 let rect = this.$refs['sign-canvas'].getBoundingClientRect();
-                let x = event.targetTouches[0].pageX - rect.left;
-                let y = event.targetTouches[0].pageY - rect.top;
-                console.log(x, y)
+                let x = event.touches[0].clientX - rect.left;
+                let y = event.touches[0].clientY - rect.top;
 
                 if (this.mouse.down) {
                     this.ctx.lineTo(x, y);
