@@ -6,9 +6,9 @@
                 @mousedown="handleMouseDown"
                 @mouseup="handleMouseUp"
                 @mousemove="handleMouseMove"
-                @touchstart="touchStart"
-                @touchmove="touchMove"
-                @touchend="handleMouseUp"
+                v-touch:start="touchStart"
+                v-touch:moving="touchMove"
+                v-touch:end="handleMouseUp"
                 @cleardraw="clear">
         </canvas>
     </div>
