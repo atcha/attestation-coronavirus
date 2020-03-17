@@ -55,23 +55,19 @@
 
             },
             touchStart(event) {
-                event.preventDefault();
                 this.mouse.down = true;
-                let x = event.touches[0].clientX;
-                let y = event.touches[0].clientY;
-                x = x - this.$refs['sign-canvas'].offsetLeft;
-                y = y - this.$refs['sign-canvas'].offsetTop;
+                let rect = this.$refs['sign-canvas'].getBoundingClientRect();
+                let x = event.targetTouches[0].clientX - rect.left;
+                let y = event.targetTouches[0].pageY - rect.top;
 
                 this.ctx.beginPath();
                 this.ctx.moveTo(x, y);
             },
             touchMove(event) {
-                event.preventDefault();
-
-                let x = event.touches[0].clientX;
-                let y = event.touches[0].clientY;
-                x = x - this.$refs['sign-canvas'].offsetLeft;
-                y = y - this.$refs['sign-canvas'].offsetTop;
+                let rect = this.$refs['sign-canvas'].getBoundingClientRect();
+                let x = event.targetTouches[0].pageX - rect.left;
+                let y = event.targetTouches[0].pageY - rect.top;
+                console.log(x, y)
 
                 if (this.mouse.down) {
                     this.ctx.lineTo(x, y);
@@ -88,7 +84,6 @@
             },
             handleMouseMove(event) {
                 if (this.mouse.down) {
-                    // this.ctx.clearRect(0, 0, this.$refs['sign-canvas'].width, this.$refs['sign-canvas'].height);
                     this.ctx.lineTo(event.offsetX, event.offsetY);
                     this.ctx.stroke();
                 }
@@ -101,5 +96,7 @@
 </script>
 
 <style scoped>
-
+    #canvas {
+        touch-action: none;
+    }
 </style>
