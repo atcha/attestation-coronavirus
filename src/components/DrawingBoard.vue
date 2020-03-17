@@ -41,6 +41,7 @@
         },
         methods: {
             initCanvas() {
+                this.provider.canvas = this.$refs['sign-canvas'];
                 this.provider.context = this.$refs['sign-canvas'].getContext('2d');
                 this.ctx = this.provider.context;
                 this.ctx.strokeStyle = '#000000';
