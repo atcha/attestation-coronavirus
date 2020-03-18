@@ -12,7 +12,6 @@
             <div class="flex flex-col justify-between mb-4">
                 <label for="birthdate">Né(e) le :</label>
                 <input id="birthdate" name="birthdate" type="date" v-model="birthDate">
-                {{birthDate}}
             </div>
             <div class="flex flex-col justify-between mb-4">
                 <label for="adress">Demeurant</label>
