@@ -186,7 +186,14 @@
                 doc.setFontSize(11);
                 doc.text(beforeSign, pageSize.width - 15, 180, {align: 'right'});
                 doc.addImage(sign, 'PNG', 150, 185, 60, 60);
-                doc.save(pdfName + '.pdf');
+                if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
+                {
+                    let blob = doc.output();
+                    window.open(URL.createObjectURL(blob));
+                }
+                else {
+                    doc.save(pdfName + '.pdf');
+                }
             }
         }
     };
