@@ -185,11 +185,10 @@
                 doc.setFont('Helvetica', 'normal');
                 doc.setFontSize(11);
                 doc.text(beforeSign, pageSize.width - 15, 180, {align: 'right'});
-                doc.addImage(sign, 'PNG', 150, 185, 60, 60);
+                doc.addImage(sign, 'PNG', 150, 180, 60, 60);
                 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
                 {
-                    let blob = doc.output();
-                    window.open(URL.createObjectURL(blob));
+                    window.open(doc.output('dataurlnewwindow', { filename: pdfName }));
                 }
                 else {
                     doc.save(pdfName + '.pdf');
