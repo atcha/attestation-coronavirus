@@ -21,3 +21,10 @@ input[type="radio"] + label {
 .btn:focus {
     @apply shadow-outline outline-none;
 }
+
+input[type="text"].is-invalid, input[type="date"].is-invalid, .is-invalid {
+    @apply bg-red-100 border-red-700;
+}
+.error {
+    @apply mt-2 text-sm text-red-700;
+}
