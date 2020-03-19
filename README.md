@@ -1,4 +1,5 @@
 # attestation-coronavirus
+Attention ! Les attestations numériques ne sont plus autorisées. Je vous invite à la remplir ou à en écrire une de votre main : https://www.interieur.gouv.fr/Actualites/L-actu-du-Ministere/Attestation-de-deplacement-derogatoire-et-justificatif-de-deplacement-professionnel
 
 ## Project setup
 ```
